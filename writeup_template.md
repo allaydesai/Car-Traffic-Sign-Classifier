@@ -76,7 +76,9 @@ I didnt decided to generate additional data at this point to keep things simple.
 Finally, we one hot encode the labels. This allows for easy comparision between the classification results and truth labels. 
 
 Here is what the label looks like before and after one_hot_encode:
+
 Label: 41
+
 one_hot: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -85,16 +87,20 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Input         		| 32x32 RGB image   							| 
+| Convolution 2x2     	| 1x1 stride, VALID padding, outputs 28x28x6 	|
+| RELU					|			Activation Function									|
+| Max pooling	2x2    	| 2x2 stride,  outputs 14x14x6 |
+| Convolution 2x2     	| 1x1 stride, VALID padding, outputs 10x10x16 	|
+| RELU					|			Activation Function									|
+| Max pooling	2x2    	| 2x2 stride,  outputs 5x5x16 |
+| Flatten	    |       									|
+| Fully connected		| 400 -> 200 outputs        									|
+| Fully connected		| 200 -> 100 outputs        									|
+| Fully connected		| 100 -> 10 outputs        									|
+| Softmax				| Classifer        									|
+
+The model I chose is based on the LeNet architecture. It has shown great success in similar classification tasks in the past. I tweaked the FC layers little to get desired performance.
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
