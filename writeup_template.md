@@ -131,28 +131,28 @@ My final model results were:
 * test set accuracy of 0.246574
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
+* What was the first architecture that was tried and why was it chosen?<br>
 I used the LeNet architecture and tweaked the fully-connected layer outputs.
 
-* What were some problems with the initial architecture?
+* What were some problems with the initial architecture?<br>
 Didnt face any issue with regards to the architecture since I went with one that had been tested and proved.
 
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting. <br>
 I didnt make any network changes apart from the outputs of FC layer. Having a larger number allows the model to have more features available for better classification.
 I did add L2 regularization to prevent overfitting.
 
-* Which parameters were tuned? How were they adjusted and why?
+* Which parameters were tuned? How were they adjusted and why?<br>
 I played around with batch_size and number of epochs. Having a larg number for epochs helped the model train longer and improve accuracy. I was cautious to not have it too large which may result in overfitting. I attempted batch size of 256 and 128 and decided to go with 128 due to better results. 
 
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?<br>
 Convolutional networks excel in detecting visual patterns from images by creating combinations of pixels. L2 regularization was used to avoid over-fitting. 
 
 If a well known architecture was chosen:
-* What architecture was chosen?
+* What architecture was chosen?<br>
 LeNet Architecture
-* Why did you believe it would be relevant to the traffic sign application?
+* Why did you believe it would be relevant to the traffic sign application?<br>
 LeNet has been used for other similar image classification purposes.
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?<br>
 The model acheive a validation accuracy of 0.91 which is slightly below the desired 0.93 and there could be many reasons for this. One of them being not enough epochs to train the model completely. Further the intialization of the weights being random, may not have started at the best point for this run. 
 The model had a testing accuracy of 0.89 which may be due to its inability to generalize well on new images. Similar performance can be seen with new images from the web.
 
@@ -197,7 +197,7 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 | .03				    | Speed limit (30km/h)      							|
 
 
-For the second image the model is absolutly sure that this is a Road work sign (probability of 0.9), and the image does contain a Road work sign. The top five soft max probabilities were
+For the second image, the model is absolutly sure that this is a Road work sign (probability of 0.9), and the image does contain a Road work sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -207,7 +207,7 @@ For the second image the model is absolutly sure that this is a Road work sign (
 | .00	      			| Right-of-way at the next intersection					 				|
 | .00				    | Priority road      							|
 
-For the thrid image the model is relatively sure that this is a Speed limit (30km/h) sign (probability of 0.74), and the image does contain a Speed limit (30km/h) sign. The top five soft max probabilities were
+For the thrid image, the model is relatively sure that this is a Speed limit (30km/h) sign (probability of 0.74), and the image does contain a Speed limit (30km/h) sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -217,7 +217,7 @@ For the thrid image the model is relatively sure that this is a Speed limit (30k
 | .00	      			| Speed limit (70km/h)					 				|
 | .00				    | Speed limit (50km/h)      							|
 
-For the fourth image the model is relatively sure that this is a Speed limit (100km/h) sign (probability of 0.6), and the image does contain a Speed limit (100km/h) sign. It is infact a Stop sign. The top five soft max probabilities were
+For the fourth image, the model is relatively sure that this is a Speed limit (100km/h) sign (probability of 0.6), and the image does contain a Speed limit (100km/h) sign. It is infact a Stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -227,7 +227,7 @@ For the fourth image the model is relatively sure that this is a Speed limit (10
 | .04	      			| End of no passing by vehicles over 3.5 metric tons					 				|
 | .02				    | Priority road      							|
 
-For the fifth image the model is relatively sure that this is a yield sign (probability of 0.9), and the image does contain a yield sign. The top five soft max probabilities were
+For the fifth image, the model is relatively sure that this is a yield sign (probability of 0.9), and the image does contain a yield sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
