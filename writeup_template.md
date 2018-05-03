@@ -105,7 +105,23 @@ The model I chose is based on the LeNet architecture. It has shown great success
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an ....
+Building the training pipeline.
+
+First I passed the inputs through the network architecture undergoing few layers of convolution and max pooling followed by fully connected. This is the forward pass through the network.
+
+Next I calculated the loss using the softmax cross-entropy loss function and input labels. Further we take the reduced mean of the loss to complete the loss function. 
+
+Next, I added some regularization in the form of L2 regularization. This will help the model generalize better. 
+
+To correct the performance of the model I calculated the cost of last result. This cost is used by the optimizer to propogate backwards through the network to adjust corresponding weights. For omptimization purposes I chose Adam optimizer as it is fairly new and has show great performance in similar applications. The goal of the optimizer is to minimize cost.
+
+Finally, we evaluate the performance of the model. We start by comparing the result with truth labels and then take the reduced mean to perform accuracy operation.
+
+I chose the following hyper parameters after adopting industry recommendations as a starting point and using a trial and error approach to refine further:
+
+Epochs = 50
+Batch_size = 128
+Learning_rate = Start with 0.01 and exponentially decays over time. This helps prevent the network from overfitting. 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
