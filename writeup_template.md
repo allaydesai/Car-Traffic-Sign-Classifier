@@ -119,9 +119,9 @@ Finally, we evaluate the performance of the model. We start by comparing the res
 
 I chose the following hyper parameters after adopting industry recommendations as a starting point and using a trial and error approach to refine further:
 
-Epochs = 50
-Batch_size = 128
-Learning_rate = Start with 0.01 and exponentially decays over time. This helps prevent the network from overfitting. 
+* Epochs = 50
+* Batch_size = 128
+* Learning_rate = Start with 0.01 and exponentially decays over time. This helps prevent the network from overfitting. 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -132,10 +132,20 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+I used the LeNet architecture and tweaked the fully-connected layer outputs.
+
 * What were some problems with the initial architecture?
+Didnt face any issue with regards to the architecture since I went with one that had been tested and proved.
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+I didnt make any network changes apart from the outputs of FC layer. Having a larger number allows the model to have more features available for better classification.
+I did add L2 regularization to prevent overfitting.
+
 * Which parameters were tuned? How were they adjusted and why?
+I played around with batch_size and number of epochs. Having a larg number for epochs helped the model train longer and improve accuracy. I was cautious to not have it too large which may result in overfitting. I attempted batch size of 256 and 128 and decided to go with 128 due to better results. 
+
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+
 
 If a well known architecture was chosen:
 * What architecture was chosen?
