@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
+[image1]: ./visualize_training.png "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
@@ -36,20 +36,20 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/allaydesai/Car-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-I used the pandas library to calculate summary statistics of the traffic
+I used the numpy library to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of the validation set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is (32,32,1)
+* The number of unique classes/labels in the data set is 43
 
 #### 2. Include an exploratory visualization of the dataset.
 
@@ -57,28 +57,29 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 ![alt text][image1]
 
+Here we can see that the training data is not well distributed among the 43 classes. This maybe intentionaly as in the real world there are some traffic signs that we see more often then the other. This may cause the classification results to be skewed. 
+
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-As a first step, I decided to convert the images to grayscale because ...
+As a first step, I decided to convert the images to grayscale because this allows us to reduce complexity and allows the classifier to focus more on features that set each traffic sign apart. 
 
 Here is an example of a traffic sign image before and after grayscaling.
 
 ![alt text][image2]
 
-As a last step, I normalized the image data because ...
+Next, I normalized the image data because this create a similar data distribution among each input parameter. It also helps the network train faster by converging faster. Finally the data distribution would be centered around zero.
 
-I decided to generate additional data because ... 
+I didnt decided to generate additional data at this point to keep things simple. But we can apply image augmentation to the dataset such as rotation, shift or zoom. This will help the model generalize better on new images.
 
-To add more data to the the data set, I used the following techniques because ... 
+Finally, we one hot encode the labels. This allows for easy comparision between the classification results and truth labels. 
 
-Here is an example of an original image and an augmented image:
+Here is what the label looks like before and after one_hot_encode:
 
-![alt text][image3]
+Label: 41
 
-The difference between the original data set and the augmented data set is the following ... 
-
+one_hot: (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0)
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -86,16 +87,20 @@ My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
+| Input         		| 32x32 RGB image   							| 
+| Convolution 2x2     	| 1x1 stride, VALID padding, outputs 28x28x6 	|
+| RELU					|			Activation Function									|
+| Max pooling	2x2    	| 2x2 stride,  outputs 14x14x6 |
+| Convolution 2x2     	| 1x1 stride, VALID padding, outputs 10x10x16 	|
+| RELU					|			Activation Function									|
+| Max pooling	2x2    	| 2x2 stride,  outputs 5x5x16 |
+| Flatten	    |       									|
+| Fully connected		| 400 -> 200 outputs        									|
+| Fully connected		| 200 -> 100 outputs        									|
+| Fully connected		| 100 -> 10 outputs        									|
+| Softmax				| Classifer        									|
+
+The model I chose is based on the LeNet architecture. It has shown great success in similar classification tasks in the past. I tweaked the FC layers little to get desired performance.
 
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
