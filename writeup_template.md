@@ -36,12 +36,13 @@ The goals / steps of this project are the following:
 
 [image1]: ./Images/visualize_training.png "Visualization"
 [image2]: ./Images/Gray_and_color.png "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image3]: ./examples/normalized.png "Normalized"
 [image4]: ./test-data/NoEntry.png "Traffic Sign 1"
 [image5]: ./test-data/roadWork.png "Traffic Sign 2"
 [image6]: ./test-data/speed30.png "Traffic Sign 3"
 [image7]: ./test-data/stop.png "Traffic Sign 4"
 [image8]: ./test-data/yield.png "Traffic Sign 5"
+[image9]: ./Images/test_data_proc.png "Data Processed"
 
 ---
 
