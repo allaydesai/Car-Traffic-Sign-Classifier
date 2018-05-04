@@ -2,7 +2,22 @@
 
 ## Writeup
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+In this project, I used my knowledge of deep neural networks and convolutional neural networks to classify traffic signs. I trained and validated a model so it can classify traffic sign images using the German Traffic Sign Dataset. After the model was trained, I then tried out my model on images of German traffic signs that I find on the web.
+
+### Dependencies
+
+This lab requires:
+* Tensorflow
+* Matplotlib
+* numpy
+* scikit-learn
+* pickle
+* random
+
+### Dataset and Repository
+
+I used a pickled dataset in which images are already resized to 32x32. It contains a training, validation and test set. The dataset consists of 43 unqiue traffic signs. 
+
 
 ---
 
@@ -19,24 +34,16 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./visualize_training.png "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
+[image1]: ./Images/visualize_training.png "Visualization"
+[image2]: ./Images/Gray_and_color.png "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+[image4]: ./test-data/NoEntry.png "Traffic Sign 1"
+[image5]: ./test-data/roadWork.png "Traffic Sign 2"
+[image6]: ./test-data/speed30.png "Traffic Sign 3"
+[image7]: ./test-data/stop.png "Traffic Sign 4"
+[image8]: ./test-data/yield.png "Traffic Sign 5"
 
 ---
-### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-You're reading it! and here is a link to my [project code](https://github.com/allaydesai/Car-Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
