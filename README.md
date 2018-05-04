@@ -17,8 +17,10 @@ This lab requires:
 
 ### Dataset and Repository
 
-I used a pickled dataset in which images are already resized to 32x32. It contains a training, validation and test set. The dataset consists of 43 unqiue traffic signs. 
+I used a pickled dataset in which images are already resized to 32x32. It contains a training, validation and test set. The German Traffic Sign dataset consists of 43 unqiue traffic signs. 
 
+Link to dataset:
+http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset
 
 ---
 
