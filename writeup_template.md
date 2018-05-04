@@ -35,14 +35,14 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./Images/visualize_training.png "Visualization"
-[image2]: ./Images/Gray_and_color.png "Grayscaling"
-[image3]: ./examples/normalized.png "Normalized"
-[image4]: ./test-data/NoEntry.png "Traffic Sign 1"
-[image5]: ./test-data/roadWork.png "Traffic Sign 2"
-[image6]: ./test-data/speed30.png "Traffic Sign 3"
-[image7]: ./test-data/stop.png "Traffic Sign 4"
-[image8]: ./test-data/yield.png "Traffic Sign 5"
-[image9]: ./Images/test_data_proc.png "Data Processed"
+[image2]: ./Images/Gray_and_color.PNG "Grayscaling"
+[image3]: ./Images/normalized.png "Normalized"
+[image4]: ./test-data/NoEntry.jpg "Traffic Sign 1"
+[image5]: ./test-data/roadWork.jpg "Traffic Sign 2"
+[image6]: ./test-data/speed30.jpg "Traffic Sign 3"
+[image7]: ./test-data/stop.jpg "Traffic Sign 4"
+[image8]: ./test-data/yield.jpg "Traffic Sign 5"
+[image9]: ./Images/test_data_proc.PNG "Data Processed"
 
 ---
 
@@ -172,6 +172,9 @@ Here are five German traffic signs that I found on the web:
 
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
+
+Preprocessed test images look as follows:
+![alt_text][image9]
 
 The first image might be difficult to classify because the no entry symbol is not cropped the same as the training images and since I have not augmented my training dataset with options such as zoom it doesnot generalize with different scaling of images. 
 
