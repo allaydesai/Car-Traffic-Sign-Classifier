@@ -137,9 +137,9 @@ I chose the following hyper parameters after adopting industry recommendations a
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.982844
-* validation set accuracy of 0.914059 
-* test set accuracy of 0.246574
+* training set accuracy of 0.9912354
+* validation set accuracy of 0.9539682 
+* test set accuracy of 0.9275534
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?<br>
@@ -194,62 +194,62 @@ Here are the results of the prediction:
 | Yield			| Yield      							|
 
 
-The model was able to correctly guess 3 of the 5 traffic signs, which gives an accuracy of 60%. This compares similar to the accuracy on the test set of 89% keeping in mind the difference in number of images for each. 
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares similar to the accuracy on the test set of 92% keeping in mind the difference in number of images for each. 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 32nd cell of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does not contain a no vehicle. The top five soft max probabilities were
+For the first image, the model is not so sure that this is a No entry sign (probability of 0.5), but the image does contain a no No entry. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .65         			| No vehicles   									| 
-| .11     				| Stop 										|
-| .05					| Ahead only											|
-| .04	      			| Bumpy Road					 				|
-| .03				    | Speed limit (30km/h)      							|
+| .51         			| No entry   									| 
+| .31     				| Bumpy road 										|
+| .05					| Traffic signals											|
+| .04	      			| Speed limit (120km/h)					 				|
+| .02				    | Bicycles crossing      							|
 
 
 For the second image, the model is absolutly sure that this is a Road work sign (probability of 0.9), and the image does contain a Road work sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .90         			| Road work   									| 
-| .00     				| Speed limit (30km/h) 										|
-| .00					| Turn right ahead											|
-| .00	      			| Right-of-way at the next intersection					 				|
-| .00				    | Priority road      							|
+| .98         			| Road work   									| 
+| .00     				| General caution 										|
+| .00					| Double curve											|
+| .00	      			| Turn right ahead					 				|
+| .00				    | Speed limit (30km/h)      							|
 
-For the thrid image, the model is relatively sure that this is a Speed limit (30km/h) sign (probability of 0.74), and the image does contain a Speed limit (30km/h) sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .74         			| Speed limit (30km/h)   									| 
-| .23     				| Speed limit (20km/h) 										|
-| .00					| Go straight or left											|
-| .00	      			| Speed limit (70km/h)					 				|
-| .00				    | Speed limit (50km/h)      							|
-
-For the fourth image, the model is relatively sure that this is a Speed limit (100km/h) sign (probability of 0.6), and the image does contain a Speed limit (100km/h) sign. It is infact a Stop sign. The top five soft max probabilities were
+For the thrid image, the model is relatively sure that this is a Speed limit (30km/h) sign (probability of 0.8), and the image does contain a Speed limit (30km/h) sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .57         			| Speed limit (100km/h)   									| 
-| .17     				| No passing for vehicles over 3.5 metric tons 										|
-| .14					| No passing											|
-| .04	      			| End of no passing by vehicles over 3.5 metric tons					 				|
-| .02				    | Priority road      							|
+| .86         			| Speed limit (30km/h)   									| 
+| .08     				| Wild animals crossing 										|
+| .02					| Speed limit (50km/h)											|
+| .00	      			| End of speed limit (80km/h)					 				|
+| .00				    | Double curve      							|
+
+For the fourth image, the model is relatively sure that this is a No passing for vehicles over 3.5 metric tons sign (probability of 0.9), and the image does contain a No passing for vehicles over 3.5 metric tons sign. It is infact a Stop sign. The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .85         			|  No passing for vehicles over 3.5 metric tons  									| 
+| .03     				| No passing										|
+| .02					| Stop 											|
+| .01	      			| Speed limit (100km/h)					 				|
+| .01				    | End of no passing by vehicles over 3.5 metric tons      							|
 
 For the fifth image, the model is relatively sure that this is a yield sign (probability of 0.9), and the image does contain a yield sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .90         			| Yield   									| 
-| .09     				| Priority road 										|
-| .00					| Stop											|
-| .00	      			| Ahead only					 				|
-| .00				    | Turn right ahead      							|
+| .98         			| Yield   									| 
+| .00     				| Stop 										|
+| .00					| No vehicles											|
+| .00	      			| Keep left					 				|
+| .00				    | No passing      							|
 
 
 
